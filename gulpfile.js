@@ -1,0 +1,37 @@
+var basePaths = { 
+    base: './',
+    node: './node_modules/',
+    sass: './_sass/'
+}
+
+
+var gulp = require('gulp');
+var del = require('del');
+
+
+
+gulp.task('clean-libs', function() {
+    return(del[basePaths.sass + 'libs/**/*']);
+});
+
+
+
+
+gulp.task('copy-libs', ['clean-libs'], function() {
+
+//Copy all bootstrap SCSS files
+var stream = gulp.src(basePaths.node + 'bootstrap/scss/**/*.scss')
+  .pipe(gulp.dest(basePaths.sass + 'libs/bootstrap4'));
+
+
+gulp.src(basePaths.node + 'font-awesome/fonts/**/*.{ttf,woff,woff2,eot,svg}')
+    .pipe(gulp.dest(basePaths.base + 'fonts'));
+
+gulp.src(basePaths.node + 'font-awesome/scss/*.scss')
+  .pipe(gulp.dest(basePaths.sass + 'libs/font-awesome'));
+
+
+//Copy all SCSS file from requried node modules
+return stream;
+
+});
