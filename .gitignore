@@ -3,3 +3,5 @@ node_modules/
 _sass/libs/
 font/
 .sass-cache/
+.sass-cache/
+.jekyll-metadata
