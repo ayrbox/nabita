@@ -1,21 +1,3 @@
-.navbar-fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  transition: all .3s ease-in-out;
-  border-radius: 0;
-  z-index: $nav-zindex;
-
-
-  &.affix { 
-    background-color: #535353;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-  }
-}
-
-
-
 
 @media (min-width: 768px) {
   .navbar-main {
@@ -28,14 +10,21 @@
     border-radius: 0;
     z-index: $nav-zindex;
 
-    .navbar-header .navbar-brand {
+    .navbar-brand {
       color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;      
+      font-weight: 900;
       &:hover, &:focus {
         color: white;
       }
     }
-    .nav > li > a {
+
+    .navbar-nav > li.nav-item > a.nav-link {
       color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 75%;
+      font-weight: 900;
       &:focus {
         color: rgba(255, 255, 255, 0.7);
       }
@@ -53,16 +42,16 @@
     &.sps--blw {
       background-color: white;
       border-color: rgba(34, 34, 34, 0.1);
-      .navbar-header .navbar-brand {
-        color: #222222;
+      .navbar-brand {
+        color: #535353;
         &:hover, &:focus {
           color: red; // $theme-primary;
         }
       }
-      .nav > li > a {
-        color: #222222;
+      .navbar-nav > li.nav-item > a.nav-link {
+        color: #535353;
         &:focus {
-          color: #222222;
+          color: #535353;
         }
         &:hover, &:focus:hover {
           color: red;// $theme-primary;
