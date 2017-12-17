@@ -1,0 +1,50 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  overflow-y: hidden;
+  background: url("../images/heroimage.jpg"), #525252; ///ehead-primary;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+
+
+  
+  .hero-content {
+    text-align: left;
+    padding: 10rem 0 3rem;
+    position: relative;
+    .header-content-inner {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      h1 {
+        margin-top: 0;
+        margin-bottom: 30px;
+        
+      }
+      .list-badges {
+        margin-bottom: 25px;
+        img {
+          height: 50px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+    
+    strong {
+      font-weight: 900;
+    }
+  }
+
+  .hero-social-link {
+    color: #fff;
+
+    &:hover {
+      color: #999;
+    }
+  }
+}
+
+
+

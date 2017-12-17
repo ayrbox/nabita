@@ -15,7 +15,19 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: nabitashrestha
-github_username:  nabitashrestha
+github_username: nabitashrestha
+
+social:
+  - title: twitter
+    url: https://twitter.com/nabita
+  - title: facebook
+    url: https://facebook.com/nabita
+  - title: google-plus
+    url: https://plus.google.com/nabita
+  - title: instagram
+    url: https://instragram.com/nabita
+  - title: linkedin
+    url: https://linkedin.com/nabita
 
 
 exclude: [

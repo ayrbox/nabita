@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-md navbar-main sps sps--abv">  
+  <div class="container">
+    <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <div class="mr-auto">&nbsp;</div>
+      <ul class="navbar-nav mt-2 mt-md-auto">
+        {% for my_page in site.pages %}
+          {% if my_page.title %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

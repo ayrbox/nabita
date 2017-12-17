@@ -24,5 +24,8 @@
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "scrollpos-styler": "^0.7.0"
   }
 }

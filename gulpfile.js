@@ -1,7 +1,8 @@
 var basePaths = { 
     base: './',
     node: './node_modules/',
-    sass: './_sass/'
+    sass: './_sass/',
+    js: './js/'
 }
 
 
@@ -19,10 +20,18 @@ gulp.task('clean-libs', function() {
 
 gulp.task('copy-libs', ['clean-libs'], function() {
 
-//Copy all bootstrap SCSS files
+//Copy all bootstrap SCSS files and javascript files
 var stream = gulp.src(basePaths.node + 'bootstrap/scss/**/*.scss')
   .pipe(gulp.dest(basePaths.sass + 'libs/bootstrap4'));
+gulp.src([
+    basePaths.node + 'bootstrap/dist/js/bootstrap.min.js',
+    basePaths.node + 'bootstrap/dist/js/bootstrap.min.js.map'
+]).pipe(gulp.dest(basePaths.js));
 
+
+//Copy Scrollpos - Styler
+gulp.src(basePaths.node + 'scrollpos-styler/scrollPosStyler.js')
+    .pipe(gulp.dest(basePaths.js));
 
 gulp.src(basePaths.node + 'font-awesome/fonts/**/*.{ttf,woff,woff2,eot,svg}')
     .pipe(gulp.dest(basePaths.base + 'fonts'));
