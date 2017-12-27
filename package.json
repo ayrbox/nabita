@@ -22,10 +22,13 @@
   "devDependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "del": "^3.0.0",
+    "fancybox": "^3.0.0",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "popper.js": "^1.12.9"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "scrollpos-styler": "^0.7.0"
   }
 }

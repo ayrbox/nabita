@@ -3,3 +3,12 @@
 
 
 
+$(function() {
+
+  
+  var a = $(".gallery-imageaa").fancybox();
+
+  console.log(a);
+
+
+});
