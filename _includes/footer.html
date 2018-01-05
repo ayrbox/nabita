@@ -2,37 +2,14 @@
 
   <div class="container">
 
-    <div class="row content-align-center">
-      <div class="col-8">
-        <strong class="text-muted">{{ site.description }}</strong>
+    <div class="row align-items-center">
+      <div class="col-auto mr-auto">
+        {{ site.description }}
       </div>
-
-
-      <div class="col-2">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-        
-      </div>
-
-      <div class="col-2">
-          <ul class="social-media-list">
-              {% if site.github_username %}
-              <li>
-                {% include icon-github.html username=site.github_username %}
-              </li>
-              {% endif %}
-    
-              {% if site.twitter_username %}
-              <li>
-                {% include icon-twitter.html username=site.twitter_username %}
-              </li>
-              {% endif %}
-            </ul>
+      <div class="col-auto">
+        Designed and Maintained by 
+        <a href="https://github.com/sawbeanraz" target="_blank">Beans</a>
       </div>
     </div>    
-
   </div>
-
 </footer>

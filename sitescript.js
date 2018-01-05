@@ -6,7 +6,7 @@
 $(function() {
 
   
-  var a = $(".gallery-imageaa").fancybox();
+  var a = $(".gallery-image").fancybox();
 
   console.log(a);
 

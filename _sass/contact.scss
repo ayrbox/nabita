@@ -1,0 +1,17 @@
+.contact{
+
+  background-color: #ff6d6d;
+
+  * {
+    color: #fff;
+  }
+}
+
+
+.contact-email {
+  font-size: 1.5em;
+
+  &:hover {
+    color: #fff;
+  }
+}
