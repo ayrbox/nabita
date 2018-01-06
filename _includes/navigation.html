@@ -8,15 +8,20 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <div class="mr-auto">&nbsp;</div>
       <ul class="navbar-nav mt-2 mt-md-auto">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
         <li class="nav-item">
-          <a class="nav-link" href="https://www.google.co.uk?q=sundar+maharjan" target="_blank">Google</a>
+          <a href="/#home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/#news" class="nav-link">Press Releases</a>
+        </li>
+        <li class="nav-item">
+          <a href="/#honoursawards" class="nav-link">Honours &amp; Awards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">About</a>
         </li>
       </ul>
     </div>
