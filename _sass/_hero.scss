@@ -48,3 +48,26 @@
 
 
 
+
+.page-hero {
+  padding: 7rem 0 4rem;
+  color: #fff;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.9)  0%, 
+      rgba(0,0,0,.2) 100%);
+    background-repeat: repeat-x;
+  }
+
+  * {
+    color: #fff;
+  }
+}
+
