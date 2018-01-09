@@ -8,7 +8,7 @@
           <div class="news-card">
               {% if post.thumbnail %}
               <div class="news-card-image-container">
-                  <img src="{{ post.thumbnail }}" alt="Card image cap">
+                  <img src="{{ post.thumbnail | prepend: site.baseurl }}" alt="Card image cap">
               </div>
               {% endif %}
               <div class="news-body">
