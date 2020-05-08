@@ -4,7 +4,9 @@
   "description": "Website for Nabita Shrestha",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix && gh-pages -d public"
   },
   "keywords": [
     "nabita",
@@ -19,16 +21,13 @@
   ],
   "author": "Sabin Raj DANGOL",
   "license": "MIT",
-  "devDependencies": {
-    "bootstrap": "^4.0.0-beta.2",
-    "del": "^3.0.0",
-    "fancybox": "^3.0.0",
-    "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
-    "popper.js": "^1.12.9"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "jquery": "^3.2.1",
-    "scrollpos-styler": "^0.7.0"
+    "bootstrap": "^4.4.1",
+    "gatsby": "^2.21.21",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
+    "reactstrap": "^8.4.1"
   }
 }
