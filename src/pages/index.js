@@ -1,7 +1,16 @@
 import React from "react";
 
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer";
+
 const IndexPage = () => {
-  return <h1>Hello</h1>;
+  return (
+    <div>
+      <ContactSection />
+
+      <Footer />
+    </div>
+  );
 };
 
 export default IndexPage;

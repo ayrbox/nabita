@@ -9,7 +9,7 @@
 title: Nabita Shrestha
 email: contact@nabitashrestha.com
 description: All right reserved. &copy; Copyright Nabita Shrestha 2018
-  
+
 baseurl: "/nabita" # the subpath of your site, e.g. /blog
 url: "https://sawbeanraz.github.io" # the base hostname & protocol for your site
 twitter_username: nabitashrestha
@@ -23,13 +23,7 @@ social:
   - title: linkedin
     url: https://www.linkedin.com/in/nabita-shrestha-0190a210b/
 
-
-exclude: [
-  "node_modules",
-  "gulpfile.js",
-  "package.json",
-  "package-lock.json"
-]
+exclude: ["node_modules", "gulpfile.js", "package.json", "package-lock.json"]
 
 # Build settings
 markdown: kramdown
