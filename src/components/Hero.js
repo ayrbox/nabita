@@ -16,7 +16,10 @@ const Hero = ({ socialMedia }) => {
 
   const imagesData = useStaticQuery(graphql`
     query {
-      allFile(filter: { sourceInstanceName: { eq: "banners" } }) {
+      allFile(
+        filter: { sourceInstanceName: { eq: "banners" } }
+        sort: { fields: name }
+      ) {
         nodes {
           id
           childImageSharp {
@@ -59,7 +62,7 @@ const Hero = ({ socialMedia }) => {
         {images.map(img => (
           <CarouselItem
             key={img.id}
-            className="hero-image"
+            className="hero-image-item"
             tag={CustomSliderItem(img.fluid)}
           />
         ))}
@@ -74,41 +77,23 @@ const Hero = ({ socialMedia }) => {
           onClickHandler={next}
         />
       </Carousel>
-      <Container
-        style={{
-          position: "absolute",
-          zIndex: 99999,
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0
-        }}
-      >
-        <div className="row">
-          <div className="col-sm-12">
-            <div className="hero-content">
-              <h1 className="display-1">
-                Nabita <strong>SHRESTHTA</strong>
-              </h1>
-              <p>
-                <strong>PROFESSIONAL TABLE TENNIS PLAYER</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-12 text-right">
-            {socialMedia.map(({ url, title }) => (
-              <a
-                href={url}
-                className="btn btn-link hero-social-link"
-                target="_blank"
-              >
-                <i className="fa fa-title fa-2x"></i>
-              </a>
-            ))}
-          </div>
-        </div>
+      <Container className="hero-text-wrapper">
+        <h1 className="display-1 hero-name">
+          <strong>Nabita </strong>
+          SHRESTHA
+        </h1>
+        <p>
+          <strong>PROFESSIONAL TABLE TENNIS PLAYER</strong>
+        </p>
+        {socialMedia.map(({ url, title }) => (
+          <a
+            href={url}
+            className="btn btn-link hero-social-link"
+            target="_blank"
+          >
+            <i className="fa fa-title fa-2x"></i>
+          </a>
+        ))}
       </Container>
     </section>
   );
