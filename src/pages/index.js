@@ -10,8 +10,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <Hero />
-      <ContactSection />
       <NewsSection />
+      <ContactSection />
       <Footer />
     </Layout>
   );

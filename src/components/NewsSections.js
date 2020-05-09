@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import { parseISO, formatDistance, format } from "date-fns";
 
 const NewsSection = () => {
   const data = useStaticQuery(graphql`
@@ -35,25 +36,32 @@ const NewsSection = () => {
     <section className="page-section" id="news">
       <h4 className="page-section-heading text-center pb-5">News</h4>
       <div className="news-wrapper">
-        {posts.map(({ frontmatter, excerpt }) => (
-          <div className="news-card">
-            <div className="news-card-image-container">
-              <Img
-                fixed={frontmatter.thumbnail.childImageSharp.fixed}
-                className="card image cap"
-              />
+        {posts.map(({ frontmatter, excerpt }) => {
+          const parsedDate = parseISO(frontmatter.date);
+          return (
+            <div className="news-card">
+              <div className="news-card-image-container">
+                <Img
+                  fixed={frontmatter.thumbnail.childImageSharp.fixed}
+                  className="card image cap"
+                />
+              </div>
+              <div className="news-body">
+                <span className="news-date">
+                  {format(parsedDate, "dd/MM/yyyy")}
+                  {"  "}
+                  {formatDistance(parsedDate, new Date())}
+                </span>
+                <h5 className="news-title">
+                  <a href="{{post.url | prepend: site.baseurl }}">
+                    {frontmatter.title}
+                  </a>
+                </h5>
+                <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+              </div>
             </div>
-            <div className="news-body">
-              <span className="news-date">{frontmatter.date}</span>
-              <h5 className="news-title">
-                <a href="{{post.url | prepend: site.baseurl }}">
-                  {frontmatter.title}
-                </a>
-              </h5>
-              <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
