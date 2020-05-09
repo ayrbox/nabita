@@ -3,7 +3,8 @@ import {
   Carousel,
   CarouselItem,
   CarouselControl,
-  CarouselIndicators
+  CarouselIndicators,
+  Container
 } from "reactstrap";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
@@ -48,35 +49,41 @@ const Hero = ({ socialMedia }) => {
   };
 
   return (
-    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-      <CarouselIndicators
-        items={images}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
-      {images.map(img => (
-        <CarouselItem
-          key={img.id}
-          className="main-banner-item"
-          tag={CustomSliderItem(img.fluid)}
+    <section className="hero-wrapper" id="home">
+      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+        <CarouselIndicators
+          items={images}
+          activeIndex={activeIndex}
+          onClickHandler={goToIndex}
         />
-      ))}
-      <CarouselControl
-        direction="prev"
-        directionText="Previous"
-        onClickHandler={previous}
-      />
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
-  );
-
-  return (
-    <section className="hero" id="home">
-      <div className="container">
+        {images.map(img => (
+          <CarouselItem
+            key={img.id}
+            className="hero-image"
+            tag={CustomSliderItem(img.fluid)}
+          />
+        ))}
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={next}
+        />
+      </Carousel>
+      <Container
+        style={{
+          position: "absolute",
+          zIndex: 99999,
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0
+        }}
+      >
         <div className="row">
           <div className="col-sm-12">
             <div className="hero-content">
@@ -102,7 +109,7 @@ const Hero = ({ socialMedia }) => {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
