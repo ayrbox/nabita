@@ -22,6 +22,14 @@ module.exports = {
         name: "banners",
         path: `${__dirname}/images/banners`
       }
-    }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/data`
+      }
+    },
+    "gatsby-transformer-yaml"
   ]
 };

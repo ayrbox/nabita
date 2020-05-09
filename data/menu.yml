@@ -1,0 +1,14 @@
+- path: /
+  title: Home
+
+- path: /#news
+  title: Press Releases
+
+- path: /#honoursawards
+  title: Honours & Awards
+
+- path: /#gallery
+  title: Gallery
+
+- path: /#about
+  title: About
