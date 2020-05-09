@@ -30,6 +30,19 @@ module.exports = {
         path: `${__dirname}/data`
       }
     },
-    "gatsby-transformer-yaml"
+    "gatsby-transformer-yaml",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/posts`
+      }
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        excerpt_separator: `<!-- -->`
+      }
+    }
   ]
 };

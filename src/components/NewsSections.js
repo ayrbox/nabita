@@ -1,32 +1,59 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
-const NewsSection = ({ posts }) => {
+const NewsSection = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      markdown: allMarkdownRemark(
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            excerpt
+            frontmatter {
+              date
+              title
+              thumbnail {
+                childImageSharp {
+                  fixed(height: 400, width: 400) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const posts = data.markdown.edges.map(({ node }) => node);
+
   return (
     <section className="page-section" id="news">
-      <div className="container">
-        <h4 className="page-section-heading text-center pb-5">News</h4>
-        <div className="row">
-          {posts.map(post => (
-            <div className="col-sm-6 col-lg-4">
-              <div className="news-card">
-                {post.thumbnail && (
-                  <div className="news-card-image-container">
-                    <img src={post.thumbnail} alt="Card image cap" />
-                  </div>
-                )}
-                <div className="news-body">
-                  <span className="news-date">{post.date}</span>
-                  <h5 className="news-title">
-                    <a href="{{post.url | prepend: site.baseurl }}">
-                      {post.title}
-                    </a>
-                  </h5>
-                  <p className="card-text">{post.content}</p>
-                </div>
-              </div>
+      <h4 className="page-section-heading text-center pb-5">News</h4>
+      <div className="news-wrapper">
+        {posts.map(({ frontmatter, excerpt }) => (
+          <div className="news-card">
+            <div className="news-card-image-container">
+              <Img
+                fixed={frontmatter.thumbnail.childImageSharp.fixed}
+                className="card image cap"
+              />
             </div>
-          ))}
-        </div>
+            <div className="news-body">
+              <span className="news-date">{frontmatter.date}</span>
+              <h5 className="news-title">
+                <a href="{{post.url | prepend: site.baseurl }}">
+                  {frontmatter.title}
+                </a>
+              </h5>
+              <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

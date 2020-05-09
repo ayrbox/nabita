@@ -1,8 +1,7 @@
 ---
-layout: post
 title: मुख्य कुरा खेलप्रति रुचि हुनुपर्‍यो - नबिता श्रेष्ठ (खेलाडी, टेबुल टेनिस)
-date: 2018-02-15 00:00:00 +000
-thumbnail: /images/nabita_nari_kantipur.jpg
+date: 2018-02-15
+thumbnail: images/nabita_nari_kantipur.jpg
 ---
 
 <p class='text-info'>
@@ -15,7 +14,7 @@ thumbnail: /images/nabita_nari_kantipur.jpg
   <strong>एउटै परिवारभित्रकी नन्दलाई हराउँदा कस्तो लाग्यो ?</strong>
 </p>
 
-जो भए पनि प्रतिस्पर्धीलाई हराउँदा खुसी लाग्नु स्वाभाविक हो । खेलमा नाताभन्दा पनि कसरी बेस्ट रिजल्ट दिने भन्ने कुरामा केन्द्रित भइन्छ ।
+जो भए पनि प्रतिस्पर्धीलाई हराउँदा खुसी लाग्नु स्वाभाविक हो । खेलमा नाताभन्दा पनि कसरी बेस्ट रिजल्ट दिने भन्ने कुरामा केन्द्रित भइन्छ । <!-- -->
 
 <p class='text-info'>
   <strong>
@@ -45,7 +44,6 @@ thumbnail: /images/nabita_nari_kantipur.jpg
 
 म शारीरिक रूपमा स्वस्थ छु । त्यसबाहेक खेलका लागि कडा परिश्रम गर्छु । दैनिक ५ घन्टा खेलमा मात्र खट्छु । खेलप्रति रुचि भएकाले मैले यसलाई जिउने आधारका रूपमा लिएकी छु । म पूर्णत: टेबुल टेनिसप्रति प्रतिबद्ध एवं समर्पित छु ।
 
-
-Source: [nari.kantipur.com][news-source]{:target="_blank"}
+Source: [nari.kantipur.com][news-source]{:target="\_blank"}
 
 [news-source]: http://nari.ekantipur.com/news/2018-02-15/20180215125203.html
