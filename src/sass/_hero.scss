@@ -3,13 +3,11 @@
   width: 100%;
   min-height: auto;
   overflow-y: hidden;
-  background: url("../images/heroimage.jpg"), #525252; ///ehead-primary;
+  // background: url("../images/heroimage.jpg"), #525252; ///ehead-primary;
   background-size: cover;
   height: 100vh;
   color: white;
 
-
-  
   .hero-content {
     text-align: left;
     padding: 10rem 0 3rem;
@@ -21,7 +19,6 @@
       h1 {
         margin-top: 0;
         margin-bottom: 30px;
-        
       }
       .list-badges {
         margin-bottom: 25px;
@@ -31,7 +28,7 @@
         }
       }
     }
-    
+
     strong {
       font-weight: 900;
     }
@@ -46,9 +43,6 @@
   }
 }
 
-
-
-
 .page-hero {
   padding: 7rem 0 4rem;
   color: #fff;
@@ -57,12 +51,15 @@
   &:before {
     content: "";
     position: absolute;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,.9)  0%, 
-      rgba(0,0,0,.2) 100%);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
     background-repeat: repeat-x;
   }
 
@@ -70,4 +67,3 @@
     color: #fff;
   }
 }
-
