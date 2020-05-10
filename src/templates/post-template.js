@@ -14,7 +14,7 @@ const NewsPage = ({ data }) => {
   const parsedDate = parseISO(frontmatter.date);
 
   return (
-    <Layout>
+    <Layout title={frontmatter.title}>
       <section class="post-hero">
         <Img
           fluid={frontmatter.banner.childImageSharp.fluid}

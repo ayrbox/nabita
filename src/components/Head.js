@@ -1,14 +1,18 @@
-import React from 'react'
+import React from "react";
+import Helmet from "react-helmet";
 
-const Head = () => {
-return (
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Title to Change</title>
-  <meta name="description" content="Description of the for the page" />
-</head>
+const Head = ({ title }) => (
+  <Helmet
+    htmlAttributes={{
+      lang: "en"
+    }}
+    title={title}
+    titleTemplate={`%s | Nabita Shrestha`}
+  />
 );
+
+Head.defaultProps = {
+  title: "Home"
+};
 
 export default Head;

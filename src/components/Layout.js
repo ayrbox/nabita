@@ -1,13 +1,19 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+
 import "../sass/index.scss";
 
-const Layout = ({ children }) => {
+import Navigation from "../components/Navigation";
+import Head from "./Head";
+
+const Layout = ({ children, title }) => {
   return (
-    <main>
-      <Navigation />
-      {children}
-    </main>
+    <>
+      <Head title={title} />
+      <main>
+        <Navigation />
+        {children}
+      </main>
+    </>
   );
 };
 
