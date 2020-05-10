@@ -9,6 +9,8 @@ import {
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
+import SocialIcons from "../components/SocialIcons";
+
 const CustomSliderItem = imgSrc => props => <Img fluid={imgSrc} {...props} />;
 
 const Hero = ({ socialMedia }) => {
@@ -85,15 +87,7 @@ const Hero = ({ socialMedia }) => {
         <p>
           <strong>PROFESSIONAL TABLE TENNIS PLAYER</strong>
         </p>
-        {socialMedia.map(({ url, title }) => (
-          <a
-            href={url}
-            className="btn btn-link hero-social-link"
-            target="_blank"
-          >
-            <i className="fa fa-title fa-2x"></i>
-          </a>
-        ))}
+        <SocialIcons />
       </Container>
     </section>
   );

@@ -1,6 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Nabita Shrestha"
+    title: "Nabita Shrestha",
+    social: {
+      fb: "https://www.facebook.com/nabita.shrestha1/",
+      ig: "https://www.instagram.com/navy.shrestha1/",
+      linkedin: "https://www.linkedin.com/in/nabita-shrestha-0190a210b/"
+    }
   },
   pathPrefix: "/nabita",
   plugins: [

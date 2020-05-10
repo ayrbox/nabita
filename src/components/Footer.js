@@ -11,7 +11,11 @@ const Footer = ({ description }) => {
           </div>
           <div className="col-auto">
             {"Designed and Maintained by "}
-            <a href="https://github.com/ayrbox" target="_blank">
+            <a
+              href="https://github.com/ayrbox"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               ayrbox
             </a>
           </div>
