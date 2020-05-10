@@ -1,42 +1,28 @@
 # Nabita Shrestha Website
-Nabita - Nepal TT national player - Website
 
+Nabita - Nepal TT national player - Website
 
 ## Quick Start
 
 ### Requirement
 
-* Nodejs and npm installed
-* Gulp
-* Ruby and Jekyll
-
+- Nodejs and npm installed
 
 ### Clone project
 
 ```
-git clone https://github.com/sawbeanraz/nabita.git
+git clone https://github.com/ayrbox/nabita.git
 ```
 
 ### Install npm packages
 
 ```
 cd nabita
-npm install
+yarn
 ```
-
-
-### Copy Boostrap and FontAwesome scss files
-```
-gulp copy-libs
-```
-
-Required gulp to be installed globally `npm install -g gulp`
-
 
 ### Run
+
 ```
-jekyll serve
+yarn develop
 ```
-
-
-

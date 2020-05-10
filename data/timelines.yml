@@ -1,17 +1,19 @@
-- name: Winner of People's Choice Award 
-  desc: Bajaj Pulsar Sports Award 2072 <br/> Organized by Nepal Sports Journalists Forum
+- name: Winner of People's Choice Award
+  description: >
+    Bajaj Pulsar Sports Award 2072  
+    Organized by Nepal Sports Journalists Forum
 
 - name: Best Player of the Year 2070
-  desc: Nepal National and International Association
+  description: Nepal National and International Association
 
 - name: Best Player of the year 2069
-  desc: Nepal National and International Association
+  description: Nepal National and International Association
 
 - name: Best Player of the Year 2068
-  desc: Nepal National and International Association
+  description: Nepal National and International Association
 
 - name: Bajaj Pulsar Sports Awards 2068 Female - Nominee
-  desc: Nepal National and International Association
+  description: Nepal National and International Association
 
 - name: Best Student of the year 2061
-  desc: Nepal National and International Association
+  description: Nepal National and International Association

@@ -1,124 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+
+import LightBox from "../components/LightBox";
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [showLightBox, setShowLightBox] = useState(false);
+
+  const { galleryImages } = useStaticQuery(graphql`
+    query {
+      galleryImages: allFile(
+        filter: { sourceInstanceName: { eq: "gallery" } }
+      ) {
+        nodes {
+          id
+          childImageSharp {
+            fluid(maxWidth: 1800) {
+              ...GatsbyImageSharpFluid
+            }
+            fixed(height: 250, width: 250) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const handleGalleryItemClick = idx => e => {
+    e.preventDefault();
+    setShowLightBox(true);
+    setSelectedImage(idx);
+  };
+
+  const handleCloseLightbox = () => {
+    setShowLightBox(false);
+  };
+
+  const handleLightboxNav = direction => {
+    const newIdx = selectedImage + direction;
+    const imageIdx =
+      newIdx < 0
+        ? galleryImages.nodes.length - 1
+        : newIdx === galleryImages.nodes.length
+        ? 0
+        : newIdx;
+    setSelectedImage(imageIdx);
+  };
+
   return (
     <section className="page-section" id="gallery">
       <div className="container">
         <h4 className="page-section-heading text-center pb-5">Gallery</h4>
-        <div className="row">
-          <div className="col-md-6 align-self-center">
+        <div className="gallery">
+          {galleryImages.nodes.map(({ id, childImageSharp }, idx) => (
             <a
-              className="gallery-image"
-              rel="gallery"
-              href="images/gallery/gallery_photo_1.jpg"
+              className="gallery-item"
+              key={id}
+              href={childImageSharp.fluid.src}
+              onClick={handleGalleryItemClick(idx)}
             >
-              <img
-                className="img-fluid"
-                src="images/gallery/thumb/gallery_photo_1.jpg"
-                alt="Image Description"
+              <Img
+                key={id}
+                fixed={childImageSharp.fixed}
+                className="gallery-image"
               />
-              <div className="text-overlay">
-                <span className="text">Game</span>
-              </div>
             </a>
-          </div>
-          <div className="col-md-3">
-            <a
-              className="gallery-image mb-3"
-              rel="gallery"
-              href="images/gallery/gallery_photo_2.jpg"
-            >
-              <img
-                className="img-fluid"
-                src="images/gallery/thumb/gallery_photo_2.jpg"
-                alt="Image Description"
-              />
-              <div className="text-overlay">
-                <span className="text">South Asian Games 2016</span>
-              </div>
-            </a>
-
-            <a
-              className="gallery-image"
-              rel="gallery"
-              href="images/gallery/gallery_photo_3.jpg"
-            >
-              <img
-                className="img-fluid"
-                src="images/gallery/thumb/gallery_photo_3.jpg"
-                alt="Image Description"
-              />
-              <div className="text-overlay">
-                <span className="text">South Asian Game 2016</span>
-              </div>
-            </a>
-          </div>
-          <div className="col-md-3">
-            <a
-              className="gallery-image mb-3"
-              rel="gallery"
-              href="images/gallery/gallery_photo_4.jpg"
-            >
-              <img
-                className="img-fluid"
-                src="images/gallery/thumb/gallery_photo_4.jpg"
-                alt="Image Description"
-              />
-              <div className="text-overlay">
-                <span className="text">World Championship</span>
-              </div>
-            </a>
-            <a
-              className="gallery-image"
-              rel="gallery"
-              href="images/gallery/gallery_photo_5.jpg"
-            >
-              <img
-                className="img-fluid"
-                src="images/gallery/thumb/gallery_photo_5.jpg"
-                alt="Image Description"
-              />
-              <div className="text-overlay">
-                <span className="text">
-                  10+
-                  <br />
-                  view photos
-                </span>
-              </div>
-            </a>
-            <img
-              className="gallery-image d-none"
-              rel="gallery"
-              href="images/gallery/gallery_photo_6.jpg"
-            />
-            <img
-              className="gallery-image d-none"
-              rel="gallery"
-              href="images/gallery/gallery_photo_7.jpg"
-            />
-            <img
-              className="gallery-image d-none"
-              rel="gallery"
-              href="images/gallery/gallery_photo_8.jpg"
-            />
-            <img
-              className="gallery-image d-none"
-              rel="gallery"
-              href="images/gallery/gallery_photo_9.jpg"
-            />
-            <img
-              className="gallery-image d-none"
-              rel="gallery"
-              href="images/gallery/gallery_photo_10.jpg"
-            />
-            <img
-              className="gallery-image d-none"
-              rel="gallery"
-              href="images/gallery/gallery_photo_11.jpg"
-            />
-          </div>
+          ))}
         </div>
       </div>
+      {showLightBox && (
+        <LightBox
+          image={galleryImages.nodes[selectedImage].childImageSharp}
+          onClose={handleCloseLightbox}
+          onNavigation={handleLightboxNav}
+        />
+      )}
     </section>
   );
 };

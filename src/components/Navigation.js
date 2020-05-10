@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
+import clsx from "clsx";
 
 const Navigation = () => {
+  const [isSticky, setSticky] = useState(false);
+
   const { menus, site } = useStaticQuery(graphql`
     query {
       menus: allMenuYaml {
@@ -23,8 +26,25 @@ const Navigation = () => {
 
   const navItems = menus.edges.map(({ node }) => node);
 
+  const handleScroll = () => {
+    const y = window.scrollY;
+    setSticky(y > 100);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", () => handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-md navbar-main sps sps--abv">
+    <nav
+      className={clsx({
+        "navbar navbar navbar-expand-md navbar-main": true,
+        fixed: isSticky
+      })}
+    >
       <div className="container">
         <Link className="navbar-brand" to="/">
           {site.meta.title}

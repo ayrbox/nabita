@@ -1,20 +1,20 @@
-
 @media (min-width: 768px) {
   .navbar-main {
     position: fixed;
     top: 0;
-    right:0;
+    right: 0;
     left: 0;
-    
-    transition: all .3s ease-in-out;
+
+    transition: all 0.3s ease-in-out;
     border-radius: 0;
     z-index: $nav-zindex;
 
     .navbar-brand {
       color: rgba(255, 255, 255, 0.7);
-      text-transform: uppercase;      
+      text-transform: uppercase;
       font-weight: 900;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: white;
       }
     }
@@ -28,23 +28,19 @@
       &:focus {
         color: rgba(255, 255, 255, 0.7);
       }
-      &:hover, &:focus:hover {
+      &:hover,
+      &:focus:hover {
         color: white;
       }
     }
 
-
-    &.sps--abv {
-      background-color: transparent;
-      border-color: transparent;
-    }
-
-    &.sps--blw {
+    &.fixed {
       background-color: white;
       border-color: rgba(34, 34, 34, 0.1);
       .navbar-brand {
         color: #535353;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: red; // $theme-primary;
         }
       }
@@ -53,11 +49,11 @@
         &:focus {
           color: #535353;
         }
-        &:hover, &:focus:hover {
-          color: red;// $theme-primary;
+        &:hover,
+        &:focus:hover {
+          color: red; // $theme-primary;
         }
       }
     }
-    border:1px solid red;
   }
 }

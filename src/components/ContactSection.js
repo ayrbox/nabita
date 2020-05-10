@@ -1,7 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { FaEnvelope } from "react-icons/fa";
+import SocialIcons from "../components/SocialIcons";
 
-const ContactSection = ({ email, socialMedia }) => {
+const ContactSection = ({ email }) => {
   return (
     <div className="page-section contact" id="about">
       <div className="container">
@@ -26,20 +27,15 @@ const ContactSection = ({ email, socialMedia }) => {
           <div className="col-sm-5">
             <div className="row">
               <div className="col">
-                <a className="contact-email" href="mailto:{{site.email}}">
-                  <i className="fa fa-envelope"></i>
+                <a className="contact-email" href={`mailto:${email}`}>
+                  <FaEnvelope style={{ marginRight: ".5rem" }} />
                   {email}
                 </a>
               </div>
             </div>
             <div className="row">
               <div className="col">
-                {socialMedia.map(({ id, title, url }) => (
-                  <a href="{{ url }}" key={id}>
-                    className="btn btn-link hero-social-link" target="_blank">
-                    <i className="fa fa-{{ title }} fa-2x"></i>
-                  </a>
-                ))}
+                <SocialIcons />
               </div>
             </div>
           </div>
@@ -50,8 +46,7 @@ const ContactSection = ({ email, socialMedia }) => {
 };
 
 ContactSection.defaultProps = {
-  email: "hello@nabitashrestha.com",
-  socialMedia: []
+  email: "hello@nabitashrestha.com"
 };
 
 export default ContactSection;
