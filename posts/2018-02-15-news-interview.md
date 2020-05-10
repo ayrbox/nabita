@@ -2,6 +2,7 @@
 title: मुख्य कुरा खेलप्रति रुचि हुनुपर्‍यो - नबिता श्रेष्ठ (खेलाडी, टेबुल टेनिस)
 date: 2018-02-15
 thumbnail: images/nabita_nari_kantipur.jpg
+banner: images/OF2KP5qFeYLdbklPpOAc.jpg
 ---
 
 <p class='text-info'>
