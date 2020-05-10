@@ -7,7 +7,7 @@ const Footer = ({ description }) => {
         <div className="row align-items-center">
           <div className="col-auto mr-auto">
             All right reserved. &copy; Copyright Nabita Shrestha
-            {new Date().getFullYear()}
+            {` ${new Date().getFullYear()}.`}
           </div>
           <div className="col-auto">
             {"Designed and Maintained by "}
