@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import NewsSection from "../components/NewsSections";
 import TimeLine from "../components/TimeLine";
+import Gallery from "../components/Gallery";
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <Hero />
       <NewsSection />
       <TimeLine />
+      <Gallery />
       <ContactSection />
       <Footer />
     </Layout>

@@ -1,0 +1,31 @@
+.lightbox-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .lightbox-content {
+    margin: 15px;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .lightbox-nav,
+  .lightbox-close {
+    font-size: 3rem;
+    color: #fff;
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+  }
+}

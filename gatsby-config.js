@@ -43,6 +43,13 @@ module.exports = {
       options: {
         excerpt_separator: `<!-- -->`
       }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "gallery",
+        path: `${__dirname}/images/gallery`
+      }
     }
   ]
 };
